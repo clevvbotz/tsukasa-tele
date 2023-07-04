@@ -2,6 +2,11 @@ const {
    spawn
 } = require('child_process')
 const path = require('path')
+const { createServer } = require ('http')
+let server = createServer(app)
+let PORT = 3000 || 8000 || 8080
+
+require("http").createServer((_, res) => res.end("Uptime!")).listen(8080)
 
 function start() {
    let args = [path.join(__dirname, 'alpha.js'), ...process.argv.slice(2)]
